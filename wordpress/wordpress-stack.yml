@@ -8,10 +8,10 @@ services:
     ports:
       - 8080:80
     environment:
-      WORDPRESS_DB_PASSWORD: m4r!aDB
+      WORDPRESS_DB_PASSWORD: PASSWORD
 
   mysql:
     image: mysql:5.7
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: m4r!aDB
+      MYSQL_ROOT_PASSWORD: PASSWORD
