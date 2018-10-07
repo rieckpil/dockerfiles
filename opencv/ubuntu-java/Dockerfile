@@ -4,6 +4,7 @@ LABEL maintainer = "mail@philipriecks.de"
 
 RUN apt-get update && \
     apt-get install -y \
+    python2.7 \
     openjdk-8-jdk \
     ant \
     git \
@@ -11,8 +12,7 @@ RUN apt-get update && \
     wget unzip \
     gcc g++ &&\
     apt-get clean && \
-    rm -rf /var/lib/apt/lists/ && \
-    rm -rf /var/cache/oracle-jdk8-installer
+    rm -rf /var/lib/apt/lists/
 
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
 RUN export JAVA_HOME
@@ -27,3 +27,6 @@ RUN cd opencv-${OPEN_CV_VERSION} && \
     mkdir build && cd build && \
     cmake -D BUILD_SHARED_LIBS=off .. && \
     make -j8
+
+ENV OPEN_CV_LIB /opencv-${OPEN_CV_VERSION}/build/lib
+RUN export OPEN_CV_LIB 
