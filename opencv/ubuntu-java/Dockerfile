@@ -17,7 +17,7 @@ RUN apt-get update && \
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
 RUN export JAVA_HOME
 
-ENV OPEN_CV_VERSION 3.4.2
+ENV OPEN_CV_VERSION 3.4.3
 
 RUN wget https://github.com/opencv/opencv/archive/${OPEN_CV_VERSION}.zip && \
     unzip ${OPEN_CV_VERSION}.zip && \
